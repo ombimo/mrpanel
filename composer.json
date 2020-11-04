@@ -1,0 +1,30 @@
+{
+    "name": "ombimo/mrpanel",
+    "description": "laravel admin crud",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bimo Aji Pamungkas",
+            "email": "bimo.aji.92@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.5"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/Helpers.php"
+        ],
+        "psr-4": {
+          "Ombimo\\MrPanel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ombimo\\MrPanel\\MrPanelServiceProvider"
+            ]
+        }
+    }
+}

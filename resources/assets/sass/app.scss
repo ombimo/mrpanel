@@ -1,0 +1,109 @@
+//bootstrap
+@import "~bootstrap/scss/bootstrap";
+//font-awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+
+@import 'login';
+@import 'panel';
+@import 'side-menu';
+
+@import "~datatables.net-bs4/css/dataTables.bootstrap4";
+
+//select2
+@import "~select2/dist/css/select2.min.css";
+@import "~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css";
+
+//summernote
+@import "~summernote/dist/summernote-bs4";
+
+body {
+    background: #fafafa;
+}
+
+.thumb-200 {
+    width: 200px;
+    max-width: 100%;
+}
+
+.img-preview {
+    opacity: 0;
+    visibility: hidden;
+    transition: cubic-bezier(.4, 0, .2, 1) 0.2s;
+    margin-top: 12px;
+    max-height: 0;
+    overflow: hidden;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        max-height: 2000px;
+    }
+}
+
+.main-footer {
+    color: rgb(68, 68, 68);
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-top: 1px solid rgb(210, 214, 222);
+}
+
+.pagination li {
+    margin-bottom: 0.4em;
+}
+
+.table-full {
+    width: 100%;
+}
+
+.select2-container {
+    max-width: 100%;
+}
+
+.input-image-preview {
+  text-align: center;
+  border: 1px solid #c0c0c0;
+  background: #f0f0f0;
+
+  &__label {
+    display: block;
+    margin: 0;
+  }
+
+  &__icons {
+    padding: 60px 0;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+    .input-image-preview.show & {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      padding: 0;
+    }
+  }
+
+  &__image {
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    max-height: 0;
+    .input-image-preview.show & {
+      opacity: 1;
+      visibility: visible;
+      max-height: 320px;
+      height: 320px;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}
+
+.img-fit {
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

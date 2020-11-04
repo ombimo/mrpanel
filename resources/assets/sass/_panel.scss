@@ -1,0 +1,138 @@
+.panel {
+    &__head {
+        height: 51px;
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+        &__logo {
+            display: none;
+        }
+        &__main {
+            flex: 1 1 100%;
+            padding: 6px 12px;
+        }
+    }
+    &__side {
+        width: 240px;
+        height: 100%;
+        z-index: 1000;
+        position: fixed;
+        background: #fff;
+        border-right: 1px solid #f0f0f0;
+        padding: 52px 0 12px 0;
+        left: -240px;
+        transition: cubic-bezier(.4, 0, .2, 1) 0.3s;
+        
+        &-container {
+            overflow: auto;
+            position: relative;
+            height: 100%;
+        }
+    }
+
+    &__main {
+        padding: 60px 12px 12px 12px;
+        position: relative;
+    }
+
+    &__body {
+        min-height: calc(100vh - 60px - 12px - 55px - 16px);
+    }
+    
+    &__foot {
+
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .panel {
+        &__side {
+            .panel-side--show & {
+                transform: translate(100%);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .panel {
+        &__head {
+            &__logo {
+                display: block;
+                width: 240px;
+                border-right: 1px solid #f0f0f0;
+                flex: 0 0 240px;
+            }
+            &__main {
+                flex: 1 1 100%;
+                padding: 6px 12px;
+            }
+        }
+        &__side {
+            left: 0;
+        }
+        &__main {
+            padding: 60px 12px 12px 252px;
+        }
+        &__body {
+
+        }
+        &__foot {
+
+        }
+    }
+}
+
+.icon-burger {
+    display: block;
+    height: 24px;
+    position: relative;
+    width: 24px;
+    span {
+        height: 4px;
+        width: 100%;
+        background: #fff;
+        display: block;
+        position: absolute;
+        top: 10px;
+        transition: cubic-bezier(.4, 0, .2, 1) 0.2s;
+    }
+    &::before, &::after {
+        content: '';
+        height: 4px;
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: cubic-bezier(.4, 0, .2, 1) 0.2s;
+    }
+    &::before {
+        top: 2px;
+    }
+    &::after {
+        bottom: 2px;
+    }
+}
+
+.panel-side--show {
+    .icon-burger {
+
+        span {
+            opacity: 0;
+        }
+        &::before {
+            transform: rotate(45deg);
+            transform-origin: top left;
+            left: 4px;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            transform-origin: bottom left;
+            left: 4px;
+        }
+    }
+}
