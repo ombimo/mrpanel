@@ -18,6 +18,7 @@ class DeleteController extends Controller
         }
 
         $red = $request->input('red');
+        $id = $request->input('id');
         $table = Table::with('colsForm.type')->where('alias', $tableAlias)->firstOrFail();
         if (empty($id)) {
             session()->flash('alert', [
