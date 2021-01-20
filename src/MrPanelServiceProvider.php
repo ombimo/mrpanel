@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Ombimo\MrPanel\Commands\LinkAsset;
 use Ombimo\MrPanel\Commands\PurgeTable;
 use Illuminate\Support\Facades\Blade;
+use Ombimo\MrPanel\Commands\FixInput;
 
 class MrPanelServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,7 @@ class MrPanelServiceProvider extends ServiceProvider
             $this->commands([
                 PurgeTable::class,
                 LinkAsset::class,
+                FixInput::class,
             ]);
         }
 

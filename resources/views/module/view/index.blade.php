@@ -46,7 +46,7 @@
     <table class="table table-striped persist-area">
       <thead class="persist-header">
         <tr>
-          <th>#</th>
+          <th class="number-col">#</th>
           @foreach($table->colsView as $col)
             <th>{{ $col->label }}</th>
           @endforeach
